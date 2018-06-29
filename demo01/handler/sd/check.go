@@ -38,7 +38,7 @@ func DiskCheck(c *gin.Context) {
 	text := "OK"
 
 	if usedPercent >= 95 {
-		status = http.StatusOK
+		status = http.StatusInternalServerError
 		text = "CRITICAL"
 	} else if usedPercent >= 90 {
 		status = http.StatusTooManyRequests
